@@ -1,6 +1,9 @@
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# include <stdlib.h>
+# include <unistd.h>
+
 # ifndef MAX_FD
 #  define MAX_FD 128
 # endif

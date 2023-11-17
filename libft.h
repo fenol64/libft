@@ -6,7 +6,7 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:46:57 by fnascime          #+#    #+#             */
-/*   Updated: 2023/11/16 16:52:53 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/11/17 16:04:38 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
 # include "get_next_line/get_next_line.h"
+# include "printf/ft_printf.h"
 
 # ifndef MAX_FD
 #  define MAX_FD 128
