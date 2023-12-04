@@ -6,11 +6,11 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 22:26:04 by fnascime          #+#    #+#             */
-/*   Updated: 2023/11/29 17:34:11 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../includes/libft.h"
 
 int	ft_putnbr_fd(int n, int fd)
 {

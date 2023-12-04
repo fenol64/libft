@@ -6,11 +6,11 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 20:12:57 by fnascime          #+#    #+#             */
-/*   Updated: 2023/11/16 16:48:00 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../includes/libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

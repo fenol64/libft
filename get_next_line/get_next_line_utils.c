@@ -6,7 +6,7 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:33:05 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 13:08:52 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:14:29 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t ft_strlen(const char *str)
 	return (i);
 }
 
-int find_current_line(char *str)
+int ind_current_line(char *str)
 {
 	if (!str)
 		return (0);
@@ -93,4 +93,3 @@ char *return_after_sep(char *res)
 	free(res);
 	return (new_res);
 }
-

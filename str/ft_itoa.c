@@ -6,11 +6,11 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 20:25:30 by fnascime          #+#    #+#             */
-/*   Updated: 2023/11/16 16:48:00 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../includes/libft.h"
 
 int	get_size(int n)
 {

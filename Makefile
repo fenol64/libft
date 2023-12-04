@@ -4,7 +4,7 @@ RAW_SRCS= $(shell find .)
 SRCS = $(filter %.c, $(RAW_SRCS))
 OBJS = $(SRCS:.c=.o)
 
-COMPILER = cc -Wall -Wextra -Werror
+COMPILER = cc -Wall -Wextra -Werror -I ./includes
 
 .c.o:
 	@ $(COMPILER) -c $< -o $(<:.c=.o)

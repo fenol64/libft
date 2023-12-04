@@ -6,20 +6,12 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:33:24 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 13:16:18 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:09:06 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 #define GET_NEXT_LINE_H
-
-#ifndef MAX_FD
-#define MAX_FD 42
-#endif
-
-#ifndef BUFFER_SIZE
-#define BUFFER_SIZE 42
-#endif
 
 #include <unistd.h>
 #include <stdlib.h>

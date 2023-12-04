@@ -6,11 +6,11 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:08:45 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 13:09:01 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../includes/libft.h"
 
 char *ft_strjoin_free_s1(char *s1, char *s2)
 {

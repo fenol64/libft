@@ -6,7 +6,7 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:46:57 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 13:30:31 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:12:00 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
-#include "get_next_line/get_next_line.h"
-#include "printf/ft_printf.h"
 
 #ifndef MAX_FD
 #define MAX_FD 128
@@ -98,6 +97,10 @@ char *ft_itoa(int n);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void ft_striteri(char *s, void (*f)(unsigned int, char *));
 
+// printf
+int treat_current_arg(char c, va_list argument);
+int ft_printf(const char *fmt, ...);
+
 // bonus functions
 
 t_list *ft_lstnew(void *content);
@@ -109,5 +112,8 @@ void ft_lstdelone(t_list *lst, void (*del)(void *));
 void ft_lstclear(t_list **lst, void (*del)(void *));
 void ft_lstiter(t_list *lst, void (*f)(void *));
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// get_next_line
+#include "get_next_line.h"
 
 #endif

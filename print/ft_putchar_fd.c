@@ -6,11 +6,11 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 19:47:22 by fnascime          #+#    #+#             */
-/*   Updated: 2023/11/16 16:53:24 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:02:50 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../includes/libft.h"
 
 int	ft_putchar_fd(char c, int fd)
 {

@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 14:52:19 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 13:17:13 by fnascime         ###   ########.fr       */
+/*   Created: 2023/12/04 19:57:30 by fnascime          #+#    #+#             */
+/*   Updated: 2023/12/04 20:13:20 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-#define PRINTF_H
+#include "includes/libft.h"
+#include <fcntl.h>
 
-#include <unistd.h>
-#include <stdarg.h>
+int main ()
+{
+	int fd = open("test.txt", O_RDONLY);
+	char *line;
 
-int treat_current_arg(char c, va_list argument);
-int ft_printf(const char *fmt, ...);
+	line = get_next_line(fd);
+	while (line)
+	{
+		ft_printf("%s\n", line);
+		free(line);
+		line = get_next_line(fd);
+	}
 
-#endif
+}

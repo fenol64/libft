@@ -6,12 +6,11 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:16:27 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 13:15:43 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:08:22 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "../libft.h"
+#include "../includes/libft.h"
 
 int treat_current_arg(char c, va_list argument)
 {
