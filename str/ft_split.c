@@ -6,16 +6,16 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 22:16:20 by fnascime          #+#    #+#             */
-/*   Updated: 2023/11/16 16:48:00 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:08:43 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static int	count_words(const char *str, char c)
+static int count_words(const char *str, char c)
 {
-	int	i;
-	int	trigger;
+	int i;
+	int trigger;
 
 	i = 0;
 	trigger = 0;
@@ -33,10 +33,10 @@ static int	count_words(const char *str, char c)
 	return (i);
 }
 
-static char	*word_dup(const char *str, int start, int finish)
+static char *word_dup(const char *str, int start, int finish)
 {
-	char	*word;
-	int		i;
+	char *word;
+	int i;
 
 	i = 0;
 	word = malloc((finish - start + 1) * sizeof(char));
@@ -46,31 +46,49 @@ static char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+static int free_all(char **split, int index)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
-	char	**split;
+	while (index >= 0)
+		free(split[index--]);
+	free(split);
+	return (0);
+}
+
+static int allocate_words(const char *str, char c, char **split)
+{
+	size_t i;
+	size_t j;
+	int index;
+
+	i = -1;
+	j = 0;
+	index = -1;
+	while (++i <= ft_strlen(str))
+	{
+		if (str[i] != c && index < 0)
+			index = i;
+		else if ((str[i] == c || i == ft_strlen(str)) && index >= 0)
+		{
+			split[j] = word_dup(str, index, i);
+			if (!split[j])
+				return (free_all(split, j));
+			j++;
+			index = -1;
+		}
+	}
+	split[j] = 0;
+	return (1);
+}
+
+char **ft_split(char const *s, char c)
+{
+	char **split;
 
 	if (!s)
 		return (0);
 	split = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (0);
-	i = -1;
-	j = 0;
-	index = -1;
-	while (++i <= ft_strlen(s))
-	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split[j++] = word_dup(s, index, i);
-			index = -1;
-		}
-	}
-	split[j] = 0;
+	allocate_words(s, c, split);
 	return (split);
 }
