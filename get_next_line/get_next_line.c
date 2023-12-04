@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/29 17:32:54 by fnascime          #+#    #+#             */
+/*   Updated: 2023/12/04 13:07:42 by fnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-char	*read_file(int fd)
+char *read_file(int fd)
 {
-	int			read_return;
-	char		*line;
-	static char	*res[MAX_FD] = {NULL};
+	int read_return;
+	char *line;
+	static char *res[MAX_FD] = {NULL};
 
 	line = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!line)
@@ -19,7 +31,7 @@ char	*read_file(int fd)
 			return (NULL);
 		}
 		line[read_return] = '\0';
-		res[fd] = ft_free_first_strjoin(res[fd], line);
+		res[fd] = ft_strjoin_free_s1(res[fd], line);
 	}
 	free(line);
 	if (!res[fd])
@@ -29,7 +41,7 @@ char	*read_file(int fd)
 	return (line);
 }
 
-char	*get_next_line(int fd)
+char *get_next_line(int fd)
 {
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);

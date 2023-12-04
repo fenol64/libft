@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/29 17:33:05 by fnascime          #+#    #+#             */
+/*   Updated: 2023/12/04 13:08:52 by fnascime         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+size_t ft_strlen(const char *str)
 {
-	size_t	i;
+	size_t i;
 
 	if (!str)
 		return (0);
@@ -12,7 +24,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int	find_current_line(char *str)
+int find_current_line(char *str)
 {
 	if (!str)
 		return (0);
@@ -25,12 +37,12 @@ int	find_current_line(char *str)
 	return (0);
 }
 
-char	*return_current_line(char *res)
+char *return_current_line(char *res)
 {
-	int		i;
-	int		check;
-	int		size;
-	char	*line;
+	int i;
+	int check;
+	int size;
+	char *line;
 
 	size = 0;
 	check = 0;
@@ -53,11 +65,11 @@ char	*return_current_line(char *res)
 	return (line);
 }
 
-char	*return_after_sep(char *res)
+char *return_after_sep(char *res)
 {
-	char	*new_res;
-	int		i;
-	int		size;
+	char *new_res;
+	int i;
+	int size;
 
 	size = 0;
 	while (res[size] && res[size] != '\n')
@@ -82,31 +94,3 @@ char	*return_after_sep(char *res)
 	return (new_res);
 }
 
-char	*ft_free_first_strjoin(char *s1, char *s2)
-{
-	char	*str;
-	int		i;
-
-	i = 0;
-	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	if (s1)
-	{
-		while (s1[i])
-		{
-			str[i] = s1[i];
-			i++;
-		}
-		free(s1);
-	}
-	while (*s2)
-		str[i++] = *s2++;
-	str[i] = '\0';
-	if (!*str)
-	{
-		free(str);
-		return (NULL);
-	}
-	return (str);
-}

@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 22:26:04 by fnascime          #+#    #+#             */
-/*   Updated: 2023/11/29 17:34:11 by fnascime         ###   ########.fr       */
+/*   Created: 2023/11/29 17:59:42 by fnascime          #+#    #+#             */
+/*   Updated: 2023/12/04 13:28:13 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_putnbr_fd(int n, int fd)
+int ft_putptr(unsigned long int ptr, bool is_upper)
 {
-	char	number;
-	int		count;
-
-	count = 0;
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
-		return (11);
-	}
-	number = '0';
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
-		count++;
-	}
-	if (n >= 10)
-		count += ft_putnbr_fd(n / 10, fd);
-	number = n % 10 + '0';
-	ft_putchar_fd(number, fd);
-	count++;
-	return (count);
+	if (!ptr)
+		return (ft_putstr("(nil)"));
+	return (ft_putstr("0x") + ft_putnbr_base(ptr, 16, is_upper));
 }

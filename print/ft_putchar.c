@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 14:38:08 by fnascime          #+#    #+#             */
-/*   Updated: 2023/11/16 16:50:42 by fnascime         ###   ########.fr       */
+/*   Created: 2023/10/21 19:47:22 by fnascime          #+#    #+#             */
+/*   Updated: 2023/12/04 13:03:51 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_atoi(const char *nptr)
+int ft_putchar(char c)
 {
-	int		i;
-	int		final_number;
-	int		signal;
-
-	i = 0;
-	final_number = 0;
-	signal = 1;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if ((nptr[i] == '+') || (nptr[i] == '-'))
-	{
-		if (nptr[i] == '-')
-			signal *= -1;
-		i++;
-	}
-	while (ft_isdigit(nptr[i]))
-	{
-		final_number = final_number * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (final_number * signal);
+	return (write(1, &c, 1));
 }

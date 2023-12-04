@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strjoin_free_s1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/22 22:26:04 by fnascime          #+#    #+#             */
-/*   Updated: 2023/11/29 17:34:11 by fnascime         ###   ########.fr       */
+/*   Created: 2023/12/04 13:08:45 by fnascime          #+#    #+#             */
+/*   Updated: 2023/12/04 13:09:01 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_putnbr_fd(int n, int fd)
+char *ft_strjoin_free_s1(char *s1, char *s2)
 {
-	char	number;
-	int		count;
+	char *str;
+	int i;
 
-	count = 0;
-	if (n == -2147483648)
+	i = 0;
+	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	if (s1)
 	{
-		write(fd, "-2147483648", 11);
-		return (11);
+		while (s1[i])
+		{
+			str[i] = s1[i];
+			i++;
+		}
+		free(s1);
 	}
-	number = '0';
-	if (n < 0)
+	while (*s2)
+		str[i++] = *s2++;
+	str[i] = '\0';
+	if (!*str)
 	{
-		ft_putchar_fd('-', fd);
-		n *= -1;
-		count++;
+		free(str);
+		return (NULL);
 	}
-	if (n >= 10)
-		count += ft_putnbr_fd(n / 10, fd);
-	number = n % 10 + '0';
-	ft_putchar_fd(number, fd);
-	count++;
-	return (count);
+	return (str);
 }
