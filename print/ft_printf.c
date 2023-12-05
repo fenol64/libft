@@ -12,7 +12,7 @@
 
 #include "../includes/libft.h"
 
-int treat_current_arg(char c, va_list argument)
+static int treat_current_arg(char c, va_list argument)
 {
 	int tb;
 

@@ -7,12 +7,12 @@ OBJS = $(SRCS:.c=.o)
 COMPILER = cc -Wall -Wextra -Werror -I ./includes
 
 .c.o:
-	@ $(COMPILER) -c $< -o $(<:.c=.o)
+	$(COMPILER) -c $< -o $(<:.c=.o)
 
 all: $(NAME)
 
 $(NAME):	$(OBJS)
-	@ ar rc $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 	@ echo "compile complete\n"
 
 clean:
