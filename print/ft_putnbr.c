@@ -6,16 +6,16 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 22:26:04 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:50:03 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
-	char number;
-	int count;
+	char	number;
+	int		count;
 
 	count = 0;
 	if (n == -2147483648)

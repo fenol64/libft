@@ -6,15 +6,15 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:16:27 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 20:08:22 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:46:55 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static int treat_current_arg(char c, va_list argument)
+static int	treat_current_arg(char c, va_list argument)
 {
-	int tb;
+	int	tb;
 
 	tb = 0;
 	if (c == 's')
@@ -36,10 +36,10 @@ static int treat_current_arg(char c, va_list argument)
 	return (tb);
 }
 
-int ft_printf(const char *fmt, ...)
+int	ft_printf(const char *fmt, ...)
 {
-	va_list variables;
-	int bytes_printed;
+	va_list	variables;
+	int		bytes_printed;
 
 	va_start(variables, fmt);
 	bytes_printed = 0;

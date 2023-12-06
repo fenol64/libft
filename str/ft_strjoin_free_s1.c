@@ -6,16 +6,16 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:08:45 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:44:16 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char *ft_strjoin_free_s1(char *s1, char *s2)
+char	*ft_strjoin_free_s1(char *s1, char *s2)
 {
-	char *str;
-	int i;
+	char	*str;
+	int		i;
 
 	i = 0;
 	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));

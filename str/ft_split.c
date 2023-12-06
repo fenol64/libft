@@ -6,16 +6,16 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 22:16:20 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:45:02 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static int count_words(const char *str, char c)
+static int	count_words(const char *str, char c)
 {
-	int i;
-	int trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -33,10 +33,10 @@ static int count_words(const char *str, char c)
 	return (i);
 }
 
-static char *word_dup(const char *str, int start, int finish)
+static char	*word_dup(const char *str, int start, int finish)
 {
-	char *word;
-	int i;
+	char	*word;
+	int		i;
 
 	i = 0;
 	word = malloc((finish - start + 1) * sizeof(char));
@@ -46,7 +46,7 @@ static char *word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
-static int free_all(char **split, int index)
+static int	free_all(char **split, int index)
 {
 	while (index >= 0)
 		free(split[index--]);
@@ -54,11 +54,11 @@ static int free_all(char **split, int index)
 	return (0);
 }
 
-static int allocate_words(const char *str, char c, char **split)
+static int	allocate_words(const char *str, char c, char **split)
 {
-	size_t i;
-	size_t j;
-	int index;
+	size_t	i;
+	size_t	j;
+	int		index;
 
 	i = -1;
 	j = 0;
@@ -80,9 +80,9 @@ static int allocate_words(const char *str, char c, char **split)
 	return (1);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **split;
+	char	**split;
 
 	if (!s)
 		return (0);

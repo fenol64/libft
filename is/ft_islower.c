@@ -6,11 +6,11 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:55:02 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 13:13:59 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:37:26 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_islower(int c)
+int	ft_islower(int c)
 {
-    return (c >= 'a' && c <= 'z');
+	return (c >= 'a' && c <= 'z');
 }

@@ -6,13 +6,13 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 17:59:42 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 20:02:49 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:50:37 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int ft_putptr(unsigned long int ptr, bool is_upper)
+int	ft_putptr(unsigned long int ptr, bool is_upper)
 {
 	if (!ptr)
 		return (ft_putstr("(nil)"));

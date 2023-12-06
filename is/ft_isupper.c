@@ -6,11 +6,11 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:54:24 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/04 12:54:33 by fnascime         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:52:05 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isupper(int c)
+int	ft_isupper(int c)
 {
-    return (c >= 'A' && c <= 'Z');
+	return (c >= 'A' && c <= 'Z');
 }
