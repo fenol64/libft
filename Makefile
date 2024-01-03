@@ -7,20 +7,23 @@ OBJS = $(SRCS:.c=.o)
 COMPILER = cc -Wall -Wextra -Werror -I ./includes
 
 .c.o:
-	$(COMPILER) -c $< -o $(<:.c=.o)
+	@ $(COMPILER) -c $< -o $(<:.c=.o)
 
 all: $(NAME)
 
 $(NAME):	$(OBJS)
-	ar rc $(NAME) $(OBJS)
-	@ echo "compile complete\n"
+	@ ar rc $(NAME) $(OBJS)
+	@ echo "✅ libft compile complete!\n"
 
 clean:
-	rm -f $(OBJS)
+	@ rm -f $(OBJS)
+	@ echo "🧹 libft clean complete!\n"
 
 fclean:	clean
-		rm -f $(NAME)
+	@rm -f $(NAME)
+	@ echo "🧹 libft fclean complete!\n"
 
 re: clean fclean $(NAME)
+	@ echo "🔄 libft re complete!\n"
 
 
