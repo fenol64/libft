@@ -6,7 +6,7 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:46:57 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/06 18:57:50 by fnascime         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:34:38 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ int		ft_putstr(char *s);
 int		ft_putendl(char *s);
 int		ft_putnbr(int n);
 int		ft_putnbr_base(long long int nbr, int base, int is_upper);
-int		ft_putptr(unsigned long int ptr, bool is_upper);
+int		ft_putptr(unsigned long int ptr, t_bool is_upper);
 
 int		ft_putchar_fd(char c, int fd);
 int		ft_putstr_fd(char *s, int fd);
 int		ft_putendl_fd(char *s, int fd);
 int		ft_putnbr_fd(int n, int fd);
-int		ft_putnbr_base_fd(long long int nbr, int base, bool is_upper, int fd);
+int		ft_putnbr_base_fd(long long int nbr, int base, t_bool is_upper, int fd);
 
 // is functions
 int		ft_isalpha(int c);
@@ -89,7 +89,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 // part 2 funcions
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strjoin_free_s1(char *s1, char *s2);
+char	*ft_strjoin_free(char *s1, char *s2, int free_str);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);

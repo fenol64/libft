@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin_free_s1.c                               :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 13:08:45 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/06 18:44:16 by fnascime         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:30:55 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strjoin_free_s1(char *s1, char *s2)
+char	*ft_strjoin_free(char *s1, char *s2, int free_str)
 {
-	char	*str;
-	int		i;
+	char	*ret;
 
-	i = 0;
-	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	if (s1)
-	{
-		while (s1[i])
-		{
-			str[i] = s1[i];
-			i++;
-		}
+	ret = ft_strjoin(s1, s2);
+	if (free_str == 1 || free_str == 3)
 		free(s1);
-	}
-	while (*s2)
-		str[i++] = *s2++;
-	str[i] = '\0';
-	if (!*str)
-	{
-		free(str);
-		return (NULL);
-	}
-	return (str);
+	if (free_str == 2 || free_str == 3)
+		free(s2);
+	return (ret);
 }

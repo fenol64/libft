@@ -6,7 +6,7 @@
 /*   By: fnascime <fnascime@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 18:43:58 by fnascime          #+#    #+#             */
-/*   Updated: 2023/12/06 18:44:00 by fnascime         ###   ########.fr       */
+/*   Updated: 2024/01/03 15:31:28 by fnascime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ static char	*read_file(int fd)
 			return (NULL);
 		}
 		line[read_return] = '\0';
-		res[fd] = ft_strjoin_free_s1(res[fd], line);
+		res[fd] = ft_strjoin_free(res[fd], line, 1);
 	}
 	free(line);
 	if (!res[fd])
