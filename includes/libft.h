@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: fenol64 <fenol64@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:46:57 by fnascime          #+#    #+#             */
-/*   Updated: 2024/01/08 03:31:04 by codespace        ###   ########.fr       */
+/*   Updated: 2024/01/08 00:38:04 by fenol64          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int			ft_putchar_fd(char c, int fd);
 int			ft_putstr_fd(char *s, int fd);
 int			ft_putendl_fd(char *s, int fd);
 int			ft_putnbr_fd(int n, int fd);
-int			ft_putnbr_base_fd(long long int nbr, int base, t_bool is_upper, int fd);
+int			ft_putnbr_base_fd(long long int nbr, int base,
+				t_bool is_upper, int fd);
 
 // matrix functions
 int			ft_free_matrix(char **matrix);
